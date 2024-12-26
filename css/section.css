@@ -1,0 +1,335 @@
+
+
+/* Section Styling */
+.section {
+    background-color: rgb(0, 0, 0);
+    width: 100%;
+    height: 100vh; /* Full viewport height */
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: center; /* Center align content vertically */
+    padding: 20px;
+    box-sizing: border-box;
+    margin-top: -15px;
+    
+    
+}
+
+
+/* Left Image Styling */
+/* Image Container */
+.imgleft {
+    width: 50%; /* Full width of the container */
+    max-width: 600px; /* Maximum width for larger screens */
+    margin: 20px auto; /* Center horizontally with some margin */
+    display: flex;
+    flex-direction: column; /* Stack the image and text vertically */
+    align-items: center; /* Horizontally center the image and text */
+    justify-content: flex-start; /* Align content at the top */
+    background-color: #f9f9f900; /* Background color in case image doesn't load */
+    border-radius: 50%; /* Rounded corners */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Subtle shadow for depth */
+
+}
+
+/* Responsive Image */
+.imgleft img {
+    width: 50%; /* Make image responsive */
+    height: auto; /* Maintain aspect ratio */
+    object-fit: cover; /* Ensure the image covers the container without distortion */
+    border-radius: 10px 10px 0 0; /* Rounded top corners */
+}
+
+/* Text Below Image */
+.image-text {
+    margin-top: 50px;
+    padding: 10px 15px; /* Add padding for the text */
+    text-align: justify; /* Center the text */
+    font-size: 16px; /* Set the font size */
+    color: #ffffff; /* Dark text for readability */
+    background-color: rgb(31, 28, 37); /* White background for the text */
+    width: 100%; /* Full width of the container */
+   border-radius: 20px;
+ 
+}
+
+/* Ensuring consistent layout for all screens */
+@media screen and (max-width: 600px) {
+    .imgleft {
+        width: 100%; /* Full width on small screens */
+        margin: 10px 0; /* Adjust margin for small screens */
+    }
+
+    .image-text {
+        width: 100%;
+        font-size: 14px; /* Slightly smaller font size for smaller screens */
+        padding: 8px 12px; /* Adjust padding for small screens */
+        margin-top: 0;
+    }
+}
+
+/* Right Content Styling */
+.contentright {
+    height: 50%; /* Take half the height */
+    width: 100%; /* Full width */
+    max-width: 400px; /* Maximum width for larger screens */
+    margin: 10px;
+    border-radius: 10px;
+    
+    overflow-y: auto; /* Add vertical scrolling */
+    overflow-x: hidden;
+    background-color: rgb(31, 28, 37);
+    color: white;
+}
+
+/* Scrollbar Styling (optional) */
+.contentright::-webkit-scrollbar {
+    width: 8px;
+}
+
+.contentright::-webkit-scrollbar-thumb {
+    background-color: #888;
+    border-radius: 4px;
+}
+
+.contentright::-webkit-scrollbar-thumb:hover {
+    background-color: #555;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+    .imgleft, .contentright {
+        height: 45%; /* Adjust height for smaller screens */
+        margin: 5px;
+        max-width: 100%;
+    }
+}
+
+@media (max-width: 480px) {
+    .imgleft, .contentright {
+        height: 48%; /* Cover most of the viewport */
+        margin: 5px;
+    }
+}
+
+
+
+
+
+/* Section Styling */
+.section1 {
+    padding: 20px;
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    overflow-x: hidden;
+    padding: 15px;
+}
+
+/* Content Container */
+.content-container {
+    width: 90%;
+    max-width: 800px;
+    padding: 10px;
+}
+
+/* Welcome Section */
+.welcome-section {
+    text-align: center;
+    margin-bottom: 30px;
+}
+
+.welcome-section h1 {
+    font-size: 2rem;
+    color: #e91e63;
+    margin-bottom: 10px;
+}
+
+.welcome-section p {
+    font-size: 1rem;
+    line-height: 1.5;
+}
+
+/* Person Section */
+.person-section {
+    margin-bottom: 40px;
+}
+
+.person-section h2 {
+    font-size: 1.5rem;
+    margin-bottom: 10px;
+    text-transform: uppercase;
+    color: #e91e63;
+}
+
+/* Person Content */
+.person-content {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    margin-bottom: 20px;
+}
+
+.popup-image {
+    width: 100px;
+    height: 100px;
+    border-radius: 50%;
+    object-fit: cover;
+    margin-right: 15px;
+}
+
+.text-content {
+    flex: 1;
+}
+
+.text-content h3 {
+    font-size: 1.2rem;
+    margin-bottom: 5px;
+    color: #e91e63;
+}
+
+.text-content p {
+    font-size: 1rem;
+    line-height: 1.5;
+    margin-bottom: 10px;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+    .person-content {
+        flex-direction: column;
+        align-items: flex-start;
+    }
+
+    .person-image {
+        margin-bottom: 10px;
+    }
+}
+
+
+/* Audio Icon Container */
+.audio-container {
+    display: flex;
+    align-items: center;
+    margin-top: 10px;
+    cursor: pointer;
+    gap: 15px; /* Space between the icon and the QR code */
+}
+
+/* Play Icon Styles */
+.play-icon {
+    font-size: 24px;
+    color: #e91e63;
+    cursor: pointer;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    transition: color 0.3s ease;
+}
+
+/* Play Icon (default state) */
+.play-icon:before {
+    content: '\25B6'; /* Unicode for play icon (▶) */
+    transition: transform 0.3s ease;
+}
+
+/* Pause Icon Styles */
+.playing:before {
+    content: '\23F8'; /* Unicode for pause icon (⏸) */
+}
+
+/* QR Code */
+.spotify-qr {
+    width: 150px; /* Adjust size of QR code */
+    height: auto;
+}
+
+/* Optional: Hover effect on play icon */
+.play-icon:hover {
+    color: #ffffff; /* Change color on hover */
+}
+
+
+
+
+
+.audio-container1 {
+    display: flex;
+    flex-direction: column;
+    align-items: center; /* Center all child elements horizontally */
+    margin-top: 10px; /* Space between image and audio container */
+}
+
+.audio-container1 .icon-qr-container {
+    display: flex;
+    align-items: center; /* Align icon and QR code vertically */
+    justify-content: center; /* Center icon and QR code horizontally */
+    gap: 10px; /* Space between icon and QR code */
+}
+
+.audio-container1 i {
+    font-size: 24px; /* Adjust icon size if needed */
+    cursor: pointer;
+}
+
+.audio-container1 audio {
+    margin: 10px 0; /* Space above and below the audio element */
+}
+
+.spotify-qr1 {
+    width: 100px; /* Adjust QR code size as needed */
+}
+
+
+
+
+/* Style for the modal */
+.modal {
+    display: none; /* Hidden by default */
+    position: fixed;
+    z-index: 1000;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    overflow: auto;
+    background-color: rgba(0, 0, 0, 0.8); /* Black background with opacity */
+}
+
+/* Modal content (the image) */
+.modal-content {
+    margin: auto;
+    display: block;
+    width: 80%;
+    max-width: 700px;
+    border-radius: 10px;
+}
+
+/* Caption (optional) */
+#caption {
+    margin: 15px auto;
+    text-align: center;
+    color: white;
+    font-size: 18px;
+}
+
+/* The Close Button */
+.close {
+    position: absolute;
+    top: 20px;
+    right: 35px;
+    color: white;
+    font-size: 40px;
+    font-weight: bold;
+    cursor: pointer;
+    transition: 0.3s;
+}
+
+.close:hover,
+.close:focus {
+    color: #bbb;
+    text-decoration: none;
+    cursor: pointer;
+}

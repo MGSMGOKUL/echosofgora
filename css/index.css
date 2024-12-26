@@ -1,0 +1,207 @@
+ /* General Body Styles */
+ body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    background: #f7f7f7;
+    color: #333;
+}
+
+/* Password Modal */
+#passwordModal {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.7);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 1000;
+}
+
+.password-container {
+    background: #fff;
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.3);
+    text-align: center;
+}
+
+.password-container input {
+    padding: 10px;
+    font-size: 1rem;
+    margin-bottom: 10px;
+    width: 80%;
+}
+
+.password-container button {
+    padding: 10px 20px;
+    background-color: #ff758c;
+    color: white;
+    border: none;
+    cursor: pointer;
+    font-size: 1rem;
+    border-radius: 5px;
+}
+
+.password-container button:hover {
+    background-color: #ff4f66;
+}
+/* Timeline Container - Restrict Scroll Area */
+#timeline-container {
+    height: 70vh; /* Define the height for the scrollable section */
+    overflow-y: auto; /* Enable vertical scrolling */
+    scroll-behavior: smooth; /* Smooth scrolling effect */
+    /* Optional: Add spacing */
+    border: 1px solid rgba(255, 255, 255, 0.2); /* Optional: Add a border for clarity */
+}
+
+/* Hide scrollbars for a cleaner look */
+#timeline-container::-webkit-scrollbar {
+    width: 8px; /* Width of the scrollbar */
+}
+
+#timeline-container::-webkit-scrollbar-thumb {
+    background: #ff758c; /* Scrollbar thumb color */
+    border-radius: 4px; /* Rounded corners */
+}
+
+#timeline-container::-webkit-scrollbar-thumb:hover {
+    background: #ff4f66; /* Thumb color on hover */
+}
+
+/* Optional: Adjust inner #timeline section styles */
+#timeline {
+    padding: 20px; /* Space around the content */
+    background: rgba(0, 0, 0, 0.6); /* Subtle background */
+    border-radius: 10px; /* Rounded corners */
+}
+
+/* Timeline Section */
+#timeline {
+    padding: 40px;
+    background-color: #ffffff25;
+    text-align: center;
+    position: relative;
+    overflow: hidden;
+    display: none; /* Hide timeline initially */
+}
+
+#timeline h2 {
+    font-size: 2rem;
+    color: #ff758c;
+    margin-bottom: 40px;
+}
+
+.timeline-container {
+    display: flex;
+    flex-direction: column;
+    gap: 50px;
+    position: relative;
+}
+
+/* Connecting Line */
+.timeline-container::before {
+    content: "";
+    position: absolute;
+    left: 50%;
+    top: 0;
+    bottom: 0;
+    width: 4px;
+    background: #ddd;
+    z-index: 1;
+}
+
+/* Timeline Item */
+.timeline-item {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: relative;
+}
+
+.timeline-item:nth-child(odd) {
+    flex-direction: row-reverse;
+}
+
+.timeline-item-content {
+    width: 45%;
+    color: white;
+    padding: 10px 20px;
+    text-align: center;
+    position: relative;
+    z-index: 2;
+    background-color: #ffffff;
+    border-radius: 5px;
+}
+
+.timeline-item h3 {
+    font-size: 1.5rem;
+    color: #ff758c;
+    margin-bottom: 10px;
+}
+
+.timeline-item p {
+    font-size: 1rem;
+    color: #004120;
+}
+
+.timeline-item .ink-splat-container {
+    width: 45%;
+    padding-top: 45%;
+    position: relative;
+}
+
+.ink-splat-img {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    clip-path: url(#inkSplat);
+    transition: transform 0.3s ease-in-out;
+}
+
+.ink-splat-img:hover {
+    transform: scale(1.1);
+}
+
+/* Add Position Indicators (Circles) */
+.timeline-indicator {
+    position: absolute;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 20px;
+    height: 20px;
+    background: #ff758c;
+    border-radius: 50%;
+    z-index: 2;
+}
+
+.timeline-item:nth-child(odd) .timeline-indicator {
+    right: auto;
+    left: calc(50% - 10px);
+}
+
+/* Tree Vector Background */
+.tree-background {
+    position: fixed; /* Fixed so it stays visible at all times */
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: -1; /* Positioned behind all content */
+    background: url('/img/tree_illus_new.avif') no-repeat center;
+    background-size: 80%; /* Ensure the tree is prominent but not overwhelming */
+    pointer-events: none; /* Prevent interaction */
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+    .tree-background {
+        background-size: 80%; /* Slightly larger on smaller screens */
+    }
+}
